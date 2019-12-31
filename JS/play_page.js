@@ -8,6 +8,8 @@ var random_dot_timeout;
 var score_value = 0;
 var time_elapsed = 0;
 var play_flag =false;
+var unt_p_width;//untouchable_place_width
+var t_p_width;//touchable_place_width
 
 function startPlaying(){
 	if(body.requestFullscreen){
@@ -22,6 +24,8 @@ function startPlaying(){
 	else if(body.msrequestFullscreen){
 		body.msrequestFullscreen();
 	}
+	unt_p_width = Math.round(window.innerHeight/20);
+	t_p_width = Math.round(window.innerWidth - 2* unt_p_width);
 	score_value = 0;
 	time_elapsed = -speed;
 	play_flag = true;
@@ -44,7 +48,7 @@ function stopPlaying(){
 function show_random_dots(){
 	time_elapsed+=speed;
 	dot.setAttribute("fill",colors[Math.round(Math.random()*6)]);
-	dot.setAttribute("cx", (5 + Math.round(Math.random()*90)) + "vw");
+	dot.setAttribute("cx", Math.round(unt_p_width + Math.random()*t_p_width)+"px");
 	dot.setAttribute("cy", (5 + Math.round(Math.random()*83)) + "vh");
 	dot.setAttribute("r","3vh");
 }
