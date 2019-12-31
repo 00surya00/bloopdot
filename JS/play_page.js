@@ -49,14 +49,26 @@ function show_random_dots(){
 	dot.setAttribute("r","3vh");
 }
 
-dot.style.display = "none";
-dot.onclick = function (){
+function dot_inflate_score_increment(){
 	score_value++;
 	dot.setAttribute("r","5vh");
-	setTimeout(function(){
-		dot.setAttribute("r","3vh");
-	},300);
 }
+
+function dot_deflate(){
+	dot.setAttribute("r","3vh");
+}
+
+if(navigator.maxTouchPoints > 0){
+	dot.ontouchend = dot_deflate;
+	dot.ontouchstart = dot_inflate_score_increment;
+	dot.ontouchcancel = dot_deflate;
+}
+else{
+	dot.onmousedown = dot_inflate_score_increment;
+	dot.onmouseup = dot_deflate;
+}
+
+dot.style.display = "none";
 
 restart_button.onclick = function(){
 	clearInterval(random_dot_interval);
@@ -84,3 +96,4 @@ play_pause_button.onclick  = function(){
 		show_random_dots();
 	}
 }
+

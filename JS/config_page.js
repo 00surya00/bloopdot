@@ -7,14 +7,22 @@ const score_page = _("#score_page");
 const play_page = _("#play_page");
 var speed;
 
-score_page.style.display = "none";
-play_page.style.display = "none";
-
-big_dot.onclick = function (){
+function inflate_big_dot(){
 	big_dot.setAttribute("r","30vh");
-	setTimeout(function(){
-		big_dot.setAttribute("r","20vh");
-	},100);
+}
+
+function deflate_big_dot(){
+	big_dot.setAttribute("r","20vh");
+}
+
+if(navigator.maxTouchPoints > 0){
+	big_dot.ontouchstart = inflate_big_dot;
+	big_dot.ontouchend = deflate_big_dot;
+	big_dot.ontouchcancel = deflate_big_dot;
+}
+else{
+	big_dot.onmousedown = inflate_big_dot;
+	big_dot.onmouseup = deflate_big_dot;
 }
 
 start_button.onclick = function(){
@@ -24,3 +32,6 @@ start_button.onclick = function(){
 	toogleVisibility(config_page,"block");
 	startPlaying();
 }
+
+score_page.style.display = "none";
+play_page.style.display = "none";
