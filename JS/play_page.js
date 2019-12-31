@@ -32,16 +32,16 @@ function startPlaying(){
 	play_pause_button.innerHTML = "Pause";
 	show_random_dots();
 	random_dot_timeout = setTimeout(stopPlaying,30000);
-	toogleVisibility(play_page,"block");
-	toogleVisibility(dot,"inline");
+	play_page.style.display = "block";
+	dot.style.display = "inline";
 	random_dot_interval = setInterval(show_random_dots,speed);
 }
 
 function stopPlaying(){
 	clearInterval(random_dot_interval);
-	toogleVisibility(dot,"inline");
-	toogleVisibility(play_page,"block");
-	toogleVisibility(score_page,"block");
+	dot.style.display = "none";
+	play_page.style.display = "none";
+	score_page.style.display = "block";
 	score.innerHTML = score_value;
 }
 
@@ -77,9 +77,9 @@ dot.style.display = "none";
 restart_button.onclick = function(){
 	clearInterval(random_dot_interval);
 	clearTimeout(random_dot_timeout);
-	toogleVisibility(dot,"inline");
-	toogleVisibility(play_page,"block");
-	toogleVisibility(config_page,"block");
+	dot.style.display = "none";
+	play_page.style.display = "none";
+	config_page.style.display = "block";
 	big_dot.setAttribute("r","25.0vmin");
 }
 
@@ -87,14 +87,14 @@ play_pause_button.onclick  = function(){
 	if(play_flag){
 		clearTimeout(random_dot_timeout);
 		clearInterval(random_dot_interval);
-		toogleVisibility(dot,"inline");
+		dot.style.display = "none";
 		play_pause_button.innerHTML = "Resume";
 		play_flag = false;
 	}
 	else{
 		random_dot_timeout = setTimeout(stopPlaying, 30000-time_elapsed);
 		time_elapsed -= speed;
-		toogleVisibility(dot,"inline");
+		dot.style.display = "inline";
 		random_dot_interval = setInterval(show_random_dots, speed);
 		play_pause_button.innerHTML = "Pause";
 		play_flag = true;
@@ -107,4 +107,3 @@ window.onresize = function(){
 	t_p_width = Math.round(window.innerWidth - 2* unt_p_width);
 	dot.setAttribute("cx", Math.round(unt_p_width + Math.random()*t_p_width)+"px");
 }
-

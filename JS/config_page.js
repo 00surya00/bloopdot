@@ -29,7 +29,7 @@ start_button.onclick = function(){
 	if(difficulty.value == "easy"){ speed=700;}
 	else if(difficulty.value == "hard"){ speed=300;}
 	else{ speed=200;}
-	toogleVisibility(config_page,"block");
+	config_page.style.display = "none";
 	startPlaying();
 }
 
