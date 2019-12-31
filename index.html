@@ -1,0 +1,43 @@
+<!DOCUMENT html>
+<html>
+	<head>
+		<title>
+			Bloop Dot
+		</title>
+		<meta charset="utf-8" name="viewport" content="user-scalable=no,width=device-width"/>
+		<link href="Icons/bloop_dot.ico" rel="icon"/>
+		<link href="CSS/stylesheet.css" rel="stylesheet" type="text/CSS"/>
+		<script src="common.js"></script>
+		<script src="JS/config_page.js" defer></script>
+		<script src="JS/play_page.js" defer></script>
+		<script src="JS/your_score.js" defer></script>
+	</head>
+	
+	<body>	
+		<div id="play_page">	
+			<div id="menu"><button id="play_pause_button">Pause</button><button id="restart_button">Restart</button></div>
+			<svg id="play_ground" height="93vh" width="100vw">
+				<circle id="dot" cx="0vh" cy="0vw" r="3vh" fill=""/>
+			</svg>
+		</div>
+		<div id="config_page">
+			<h1 id="Heading"> Bloop Dot </h1>
+			<svg id="big_dot_svg" height="60vh" width="100vw">
+				<circle id="big_dot" cx="50vw" cy="30vh" r="20vh" fill="red"/>
+			</svg>
+			<select id="difficulty" name="difficulty">
+				<option value="easy">Easy</option>
+				<option value="hard">Hard</option>
+				<option value="impossible">Impossible</option>
+			</select>
+			<br/>
+			<button id="start_button">Start</button>
+		</div>
+		<div id="score_page">
+			<h1> Your Score </h1>
+			<h2 id="score"></h2>
+			<button id="replay_button">Replay</button>
+			<button id="main_page_button">Main Page</button>
+		</div>
+	</body>
+</html>

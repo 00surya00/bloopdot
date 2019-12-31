@@ -1,0 +1,55 @@
+body{
+	background-color:black;
+	margin:0 0 0 0;
+	font-family:Sans-Serif;
+}
+
+h1,h2{
+	text-align:center;
+	color:white;
+	font-size:9vh;
+	margin: 2vh 0vh 2vh 0vh;
+}
+
+h2{
+	font-size:6vh;
+}
+
+select,button{
+	background-color:black;
+	color:white;
+	border:white 0.5vh solid; 
+	border-radius:3vh;
+}
+
+#difficulty{
+	font-size:5vh;
+	margin: 2vh 0.5vh 2vh 0.5vw;
+}
+
+#start_button{
+	margin: 2vh 0.5vw 2vh 0.5vw;
+	font-size:5.5vh;
+}
+
+#restart_button,#play_pause_button,#replay_button,#main_page_button{
+	font-size:3vh;
+	margin-left:3vh;
+}
+
+#big_dot,#dot{
+	display:inline;
+}
+
+#config_page,#score_page{
+	text-align:center;
+}
+
+#score_page,#play_page{
+	display:none;
+}
+
+#menu{
+	text-align:right;
+	margin-top:2vh;
+}
