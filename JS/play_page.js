@@ -80,6 +80,7 @@ restart_button.onclick = function(){
 	toogleVisibility(dot,"inline");
 	toogleVisibility(play_page,"block");
 	toogleVisibility(config_page,"block");
+	big_dot.setAttribute("r","25.0vmin");
 }
 
 play_pause_button.onclick  = function(){
@@ -99,5 +100,11 @@ play_pause_button.onclick  = function(){
 		play_flag = true;
 		show_random_dots();
 	}
+}
+
+window.onresize = function(){
+	unt_p_width = Math.round(window.innerHeight/20);
+	t_p_width = Math.round(window.innerWidth - 2* unt_p_width);
+	dot.setAttribute("cx", Math.round(unt_p_width + Math.random()*t_p_width)+"px");
 }
 

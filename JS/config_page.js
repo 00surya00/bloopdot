@@ -8,11 +8,11 @@ const play_page = _("#play_page");
 var speed;
 
 function inflate_big_dot(){
-	big_dot.setAttribute("r","30vh");
+	big_dot.setAttribute("r","30vmin");
 }
 
 function deflate_big_dot(){
-	big_dot.setAttribute("r","20vh");
+	big_dot.setAttribute("r","25vmin");
 }
 
 if(navigator.maxTouchPoints > 0){

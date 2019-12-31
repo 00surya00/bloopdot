@@ -9,4 +9,5 @@ replay_button.onclick = function(){
 main_page_button.onclick = function(){
 	toogleVisibility(score_page,"block");
 	toogleVisibility(config_page,"block");
+	big_dot.setAttribute("r","25.0vmin");
 }
