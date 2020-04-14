@@ -1,6 +1,6 @@
 function _(selector){
-	var identifier = selector.slice(0,1);
-	var name = selector.slice(1,selector.length);
+	let identifier = selector.slice(0,1);
+	let name = selector.slice(1,selector.length);
 	if(identifier=="#"){
 		return document.getElementById(name);
 	}
@@ -14,7 +14,7 @@ function _(selector){
 
 function toogleVisibility(element,display_style,multiple=false){
 	if(multiple){
-		for(var i =0;i<element.length;i++){
+		for(let i =0;i<element.length;i++){
 			element[i].style.display = (element[i].style.display=='none'?display_style:'none');
 		}
 	}

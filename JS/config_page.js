@@ -5,7 +5,7 @@ const start_button = _("#start_button");
 const config_page =  _("#config_page");
 const score_page = _("#score_page");
 const play_page = _("#play_page");
-var speed;
+let speed;
 
 function inflate_big_dot(){
 	big_dot.setAttribute("r","30vmin");

@@ -3,13 +3,13 @@ const score = _("#score");
 const play_pause_button = _("#play_pause_button");
 const restart_button = _("#restart_button");
 const colors = ["violet","indigo","blue","green","yellow","orange","red"];
-var random_dot_interval;
-var random_dot_timeout;
-var score_value = 0;
-var time_elapsed = 0;
-var play_flag =false;
-var unt_p_width;//untouchable_place_width
-var t_p_width;//touchable_place_width
+let random_dot_interval;
+let random_dot_timeout;
+let score_value = 0;
+let time_elapsed = 0;
+let play_flag =false;
+let unt_p_width;//untouchable_place_width
+let t_p_width;//touchable_place_width
 
 function startPlaying(){
 	if(body.requestFullscreen){
